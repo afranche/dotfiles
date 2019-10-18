@@ -48,7 +48,7 @@ in {
     keybindings = {
       "${modifier}+Return" = "exec termite";
       "${modifier}+Shift+q" = "kill";
-      "${modifier}+m" = "exec ${rofi}/bin/rofi -show drun -display-drun \":\" -show-icons";
+      "${modifier}+m" = "exec ${rofi}/bin/rofi -show drun -display-drun \":\"";
       "${modifier}+Shift+m" = "exec ${rofi}/bin/rofi -display-run \":\" -show run";
 
       "${modifier}+h" = "focus left";

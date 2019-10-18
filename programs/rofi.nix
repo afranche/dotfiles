@@ -32,4 +32,9 @@ in {
       };
     };
   };
+  extraConfig = ''
+    rofi.combi-modi: run,drun
+    rofi.show-icons: true
+    rofi.icon-theme: Arc
+  '';
 }

@@ -7,22 +7,19 @@ in {
   enable-scroll = "true";
   format-padding = 1;
 
-  icon-default = "";
+  ws-icon-default = "";
 
   format = "<label-state>";
   format-background = colors.shade2;
-  label-active = "";
-  label-occupied = "";
+
+  label-mode = "%mode%";
+  label-focused = "";
+  label-visible = "";
   label-urgent = "";
-  label-empty = "";
+  label-unfocused = "";
 
-  label-empty-padding = 1;
-  label-active-padding = 1;
+  label-focused-padding = 1;
+  label-visible-padding = 1;
   label-urgent-padding = 1;
-  label-occupied-padding = 1;
-
-  label-empty-foreground = colors.fg;
-  label-active-foreground = colors.acolor;
-  label-urgent-foreground = colors.curgent;
-  label-occupied-foreground = colors.coccupied;
+  label-unfocused-padding = 1;
 }

@@ -31,4 +31,7 @@ pkgs: with pkgs; [
   nerdfonts
   scrot
   libnotify
+  xfce.thunar
+  xfce.thunar-volman
+  xfce.thunar-archive-plugin
 ]

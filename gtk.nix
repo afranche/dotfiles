@@ -5,8 +5,8 @@ pkgs: with pkgs; {
     name = "Adapta";
   };
   iconTheme = {
-    package = numix-icon-theme-square;
-    name = "Numix Square";
+    package = arc-icon-theme;
+    name = "Arc";
   };
   font = let
     fonts = import ./fonts.nix pkgs;
