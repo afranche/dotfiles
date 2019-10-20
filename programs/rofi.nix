@@ -23,11 +23,11 @@ in {
     rows = {
       normal = {
         background = colors.bg;
-        foreground = colors.fg-alt;
+        foreground = colors.fg;
         backgroundAlt = colors.bg;
         highlight = {
-          background = colors.shade2;
-          foreground = colors.fg-alt;
+          background = colors.primary;
+          foreground = colors.fg;
         };
       };
     };

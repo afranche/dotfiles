@@ -14,15 +14,15 @@ in {
   format-discharging-padding = 2;
   format-full-padding = 2;
 
-  format-background = colors.shade4;
-  format-empty-background = colors.shade4;
+  format-background = colors.primary;
+  format-empty-background = colors.accent;
 
   format-charging = "<animation-charging> <label-charging>";
   format-discharging = "<animation-discharging> <label-discharging>";
   format-full = "<label-full>";
-  format-charging-background = colors.shade4;
-  format-discharging-background = colors.shade4;
-  format-full-background = colors.shade4;
+  format-charging-background = colors.primary;
+  format-discharging-background = colors.primary;
+  format-full-background = colors.primary;
 
   label-charging = "AC %percentage%%";
   label-discharging = "%percentage%%";

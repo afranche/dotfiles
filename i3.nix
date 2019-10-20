@@ -12,18 +12,18 @@ in {
     window.titlebar = false;
     colors = rec {
       focused = {
-        background = colorVars.shade2;
-        border = colorVars.shade2;
-        childBorder = colorVars.shade2;
-        indicator = colorVars.shade2;
-        text = colorVars.fg-alt;
+        background = colorVars.primary;
+        border = colorVars.primary;
+        childBorder = colorVars.primary;
+        indicator = colorVars.primary;
+        text = colorVars.fg;
       };
       focusedInactive = {
         background = colorVars.bg;
         border = colorVars.bg;
         childBorder = colorVars.bg;
         indicator = colorVars.bg;
-        text = colorVars.fg-alt;
+        text = colorVars.fg;
       };
       unfocused = {
         background = focusedInactive.background;
@@ -33,11 +33,11 @@ in {
         text = focusedInactive.text;
       };
       urgent = {
-        background = colorVars.amber;
-        border = colorVars.amber;
-        childBorder = colorVars.amber;
-        indicator = colorVars.amber;
-        text = colorVars.fg-alt;
+        background = colorVars.accent;
+        border = colorVars.accent;
+        childBorder = colorVars.accent;
+        indicator = colorVars.accent;
+        text = colorVars.fg;
       };
     };
     gaps = rec {
@@ -46,10 +46,11 @@ in {
     };
     modifier = "Mod4";
     keybindings = {
-      "${modifier}+Return" = "exec termite";
+      "${modifier}+Return" = "exec urxvt";
       "${modifier}+Shift+q" = "kill";
       "${modifier}+m" = "exec ${rofi}/bin/rofi -show drun -display-drun \":\"";
       "${modifier}+Shift+m" = "exec ${rofi}/bin/rofi -display-run \":\" -show run";
+      "${modifier}+v" = "exec ${betterlockscreen}/bin/betterlockscreen -l";
 
       "${modifier}+h" = "focus left";
       "${modifier}+j" = "focus down";

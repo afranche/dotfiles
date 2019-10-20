@@ -10,7 +10,7 @@ in {
   ws-icon-default = "";
 
   format = "<label-state>";
-  format-background = colors.shade2;
+  format-background = colors.primary;
 
   label-mode = "%mode%";
   label-focused = "";

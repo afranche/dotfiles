@@ -34,4 +34,5 @@ pkgs: with pkgs; [
   xfce.thunar
   xfce.thunar-volman
   xfce.thunar-archive-plugin
+  unity3d
 ]

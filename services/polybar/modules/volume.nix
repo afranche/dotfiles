@@ -4,10 +4,10 @@ in {
   type = "internal/pulseaudio";
   format-volume = "<ramp-volume> <label-volume>";
   format-volume-padding = 2;
-  format-volume-background = colors.shade5;
+  format-volume-background = colors.primary;
   label-volume = "%percentage%%";
   label-muted = "婢";
-  label-muted-background = colors.shade5;
+  label-muted-background = colors.primary;
   label-muted-padding = 2;
 
   ramp-volume-0 = "奄";
