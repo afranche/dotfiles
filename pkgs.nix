@@ -1,22 +1,14 @@
 pkgs: with pkgs; [
   riot-desktop
-  discord
-  vue
-  neofetch
   tmux
   xorg.xbacklight
-  zoom-us
   dunst
-  lxappearance
   aws-iam-authenticator
   unzip
   jetbrains.pycharm-community
-  beam.packages.erlang.elixir
-  exfat
   playerctl
   htop
   firefox
-  git
   emacs
   xsel
   slack
@@ -27,7 +19,6 @@ pkgs: with pkgs; [
   manuskript
   discord
   rofi
-  pipenv
   nerdfonts
   scrot
   libnotify
@@ -35,4 +26,11 @@ pkgs: with pkgs; [
   xfce.thunar-volman
   xfce.thunar-archive-plugin
   unity3d
+  zoom-us
+  git
+  gitAndTools.gitflow
+  pavucontrol
+  gimp
+  openvpn # TODO: Write a config file to use it system-wide (and auto-load it)
+  pywal
 ]

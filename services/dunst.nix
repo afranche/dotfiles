@@ -4,17 +4,21 @@ pkgs: let gtk = import ../gtk.nix pkgs; in {
   iconTheme = gtk.iconTheme;
 
   settings = let
-    colors = import ../colors.nix;
+    colors = {
+      bg = "#111111";
+      fg = "#dddddd";
+    };
     fonts = import ../fonts.nix pkgs;
   in {
     global = rec {
       geometry = "300x5-30+62";
       transparency = 10;
-      frame_color = colors.primary;
-      font = "${fonts.icon.name} 8"; # Special size for dunst
+      frame_color = colors.fg;
+      font = "${fonts.icon.name} 12"; # Special size for dunst
       format = "%s\\n%b";
       padding = 24;
       horizontal_padding = padding;
+      show-icons = "left";
     };
     urgency_low = {
       background = colors.bg;
@@ -29,8 +33,8 @@ pkgs: let gtk = import ../gtk.nix pkgs; in {
       timeout = 10;
     };
     urgency_critical = {
-      background = colors.accent;
-      foreground = colors.fg;
+      background = colors.fg;
+      foreground = colors.bg;
       frame_width = 0;
       timeout = 0;
     };

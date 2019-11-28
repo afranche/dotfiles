@@ -1,10 +1,10 @@
 let
-  colors = import ../../../colors.nix;
+  vars = import ../vars.nix;
 in {
   type = "internal/xbacklight";
   format = "<ramp>";
   format-padding = 2;
-  format-background = colors.primary;
+  format-background = vars.primary;
 
   ramp-0 = "";
   ramp-1 = "";

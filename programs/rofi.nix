@@ -14,27 +14,10 @@ in {
   scrollbar = false;
   separator = "none";
 
-  colors = {
-    window = {
-      background = colors.bg;
-      border = colors.bg;
-      separator = colors.bg;
-    };
-    rows = {
-      normal = {
-        background = colors.bg;
-        foreground = colors.fg;
-        backgroundAlt = colors.bg;
-        highlight = {
-          background = colors.primary;
-          foreground = colors.fg;
-        };
-      };
-    };
-  };
   extraConfig = ''
     rofi.combi-modi: run,drun
     rofi.show-icons: true
     rofi.icon-theme: Arc
+    rofi.theme: .cache/wal/colors-rofi-dark.rasi
   '';
 }

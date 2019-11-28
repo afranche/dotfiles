@@ -1,5 +1,5 @@
 let
-  colors = import ../../../colors.nix;
+  vars = import ../vars.nix;
 in {
   type = "internal/battery";
   battery = "BAT0";
@@ -14,15 +14,15 @@ in {
   format-discharging-padding = 2;
   format-full-padding = 2;
 
-  format-background = colors.primary;
-  format-empty-background = colors.accent;
+  format-background = vars.primary;
+  format-empty-background = vars.accent;
 
   format-charging = "<animation-charging> <label-charging>";
   format-discharging = "<animation-discharging> <label-discharging>";
   format-full = "<label-full>";
-  format-charging-background = colors.primary;
-  format-discharging-background = colors.primary;
-  format-full-background = colors.primary;
+  format-charging-background = vars.primary;
+  format-discharging-background = vars.primary;
+  format-full-background = vars.primary;
 
   label-charging = "AC %percentage%%";
   label-discharging = "%percentage%%";

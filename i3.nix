@@ -3,27 +3,33 @@ pkgs: with pkgs; let
 in {
   enable = true;
   package = i3-gaps;
+  extraConfig = ''
+    set_from_resource $foreground *.foreground #f0f0f0
+    set_from_resource $background *.background #f0f0f0
+    set_from_resource $primary *.color2 #f0f0f0
+    set_from_resource $accent *.color3 #f0f0f0
+  '';
   config = rec {
     bars = [];
     startup = [
-      { command = "feh --bg-fill .outrun.jpg"; always = true; }
+      { command = "wal -a \"75\" -i ~/.wallpapers"; always = true; }
       { command = "systemctl --user restart polybar.service"; always = true; }
     ];
     window.titlebar = false;
     colors = rec {
       focused = {
-        background = colorVars.primary;
-        border = colorVars.primary;
-        childBorder = colorVars.primary;
-        indicator = colorVars.primary;
-        text = colorVars.fg;
+        background = "$primary";
+        border = "$primary";
+        childBorder = "$primary";
+        indicator = "$primary";
+        text = "$foreground";
       };
       focusedInactive = {
-        background = colorVars.bg;
-        border = colorVars.bg;
-        childBorder = colorVars.bg;
-        indicator = colorVars.bg;
-        text = colorVars.fg;
+        background = "$background";
+        border = "$background";
+        childBorder = "$background";
+        indicator = "$background";
+        text = "$foreground";
       };
       unfocused = {
         background = focusedInactive.background;
@@ -33,15 +39,15 @@ in {
         text = focusedInactive.text;
       };
       urgent = {
-        background = colorVars.accent;
-        border = colorVars.accent;
-        childBorder = colorVars.accent;
-        indicator = colorVars.accent;
-        text = colorVars.fg;
+        background = "$accent";
+        border = "$accent";
+        childBorder = "$accent";
+        indicator = "$accent";
+        text = "$foreground";
       };
     };
     gaps = rec {
-      inner = 12;
+      inner = 24;
       outer = inner * 2;
     };
     modifier = "Mod4";
@@ -91,7 +97,6 @@ in {
       "${modifier}+Shift+8" = "move container to workspace 8";
       "${modifier}+Shift+9" = "move container to workspace 9";
 
-      "${modifier}+Shift+c" = "reload";
       "${modifier}+Shift+r" = "restart";
       "${modifier}+Shift+e" = "exec i3-nagbar -t warning -m 'Do you want to exit i3?' -b 'Yes' 'i3-msg exit'";
 

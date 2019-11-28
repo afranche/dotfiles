@@ -1,5 +1,5 @@
 let
-  colors = import ../../../colors.nix;
+  vars = import ../vars.nix;
 in {
   type = "internal/i3";
   pin-workspaces = "true";
@@ -10,7 +10,7 @@ in {
   ws-icon-default = "";
 
   format = "<label-state>";
-  format-background = colors.primary;
+  format-background = vars.primary;
 
   label-mode = "%mode%";
   label-focused = "";

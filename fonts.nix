@@ -9,4 +9,9 @@ pkgs: with pkgs; {
     size = "13";
     package = nerdfonts;
   };
+  medieval = {
+    name = "F25 BlackletterTypewriter";
+    size = "17";
+    package = null;  # Downloaded from dafont... May make a package for it ?
+  };
 }

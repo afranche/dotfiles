@@ -8,7 +8,6 @@ pkgs: with pkgs; rec {
     polybar main -c ~/.config/polybar/config &
   '';
   config = let
-    colors = import ../../colors.nix;
     fonts = import ../../fonts.nix pkgs;
     vars = import ./vars.nix;
   in {
@@ -19,8 +18,8 @@ pkgs: with pkgs; rec {
       tray-position = "center";
       tray-detached = "false";
       line-size = "2";
-      background = colors.bg;
-      foreground = colors.fg;
+      background = vars.background;
+      foreground = vars.foreground;
       font-0 = "${fonts.primary.name}:pixelsize=${fonts.primary.size};3";
       font-1 = "${fonts.icon.name}:pixelsize=${fonts.icon.size};3";
       cursor-click = "pointer";

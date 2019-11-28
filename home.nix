@@ -11,6 +11,13 @@
   programs.zsh = import ./programs/zsh.nix;
   programs.urxvt.enable = true;  # Configured through XResources...
 
+  services.compton = {
+    enable = true;
+    blur = true;
+    fade = true;
+    fadeDelta = 4;
+  };
+  services.keybase.enable = true;
   services.polybar = import ./services/polybar/polybar.nix pkgs;
   services.dunst = import ./services/dunst.nix pkgs;
 

@@ -5,7 +5,9 @@ in {
   "URxvt*scrollbar" = "false";
   "URxvt*font" = "xft:${fonts.primary.name}:size=${fonts.icon.size}:antialias=true";
   "URxvt*depth" = 32;
-  "URxvt*internalBorder" = 10;
+  "URxvt*internalBorder" = 25;
+  "URxvt*transparency" = true;
+  "URxvt*shading" = 110;
 
   "*.foreground" = "#ffffff";
   "*.background" = "#151515";

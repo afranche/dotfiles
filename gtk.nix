@@ -14,9 +14,4 @@ pkgs: with pkgs; {
     package = fonts.primary.package;
     name = "${fonts.primary.name} ${fonts.primary.size}";
   };
-  gtk3.extraCss = ''
-    VteTerminal {
-      -VteTerminal-inner-border: 40px;
-    }
-  '';
 }

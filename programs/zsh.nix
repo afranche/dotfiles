@@ -6,7 +6,9 @@
     theme = "norm";
   };
   shellAliases = {
-    he = "home-manager edit";
+    e = "emacs &";
+    g = "git";
+    he = "home-manager edit &";
     hs = "home-manager switch";
   };
   enableAutosuggestions = true;
