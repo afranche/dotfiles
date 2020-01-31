@@ -1,27 +1,48 @@
 { config, pkgs, ... }:
 
 {
+  # Let Home Manager install and manage itself.
   nixpkgs.config.allowUnfree = true;
-
-  home.packages = import ./pkgs.nix pkgs;
-
   programs.home-manager.enable = true;
-  programs.feh.enable = true;
-  programs.rofi = import ./programs/rofi.nix pkgs;
-  programs.zsh = import ./programs/zsh.nix;
-  programs.urxvt.enable = true;  # Configured through XResources...
 
-  services.compton = {
+  home.packages = with pkgs; [
+    jetbrains.pycharm-community
+    chromium
+    riot-desktop
+    quassel
+    franz
+    tmux
+    git
+    zoom-us
+    pavucontrol
+    spotify
+    docker-compose
+    kubectl
+    awscli
+    gnumake
+    postman
+    xsel
+  ];
+
+  gtk = with pkgs; {
     enable = true;
-    blur = true;
-    fade = true;
-    fadeDelta = 4;
+    theme = {
+      package = adapta-gtk-theme;
+      name = "Adapta";
+    };
+    iconTheme = {
+      package = arc-icon-theme;
+      name = "Arc";
+    };
   };
-  services.keybase.enable = true;
-  services.polybar = import ./services/polybar/polybar.nix pkgs;
-  services.dunst = import ./services/dunst.nix pkgs;
 
-  xsession.windowManager.i3 = import ./i3.nix pkgs;
-  gtk = import ./gtk.nix pkgs;
-  xresources.properties = import ./xresources.nix pkgs;
+  # This value determines the Home Manager release that your
+  # configuration is compatible with. This helps avoid breakage
+  # when a new Home Manager release introduces backwards
+  # incompatible changes.
+  #
+  # You can update Home Manager without changing this value. See
+  # the Home Manager release notes for a list of state version
+  # changes in each release.
+  home.stateVersion = "19.09";
 }
