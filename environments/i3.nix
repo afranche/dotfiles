@@ -10,11 +10,15 @@ let
     size = "13";
     package = pkgs.nerdfonts;
   };
-in { 
+in {
   programs.feh.enable = true;
   services.dunst = {
     enable = true;
 
+    iconTheme = {
+      package = pkgs.arc-icon-theme;
+      name = "Arc";
+    };
     settings = {
       global = {
         geometry = "500x5-30+62";
@@ -25,6 +29,14 @@ in {
         padding = 24;
         horizontal_padding = 24;
         show-icons = "left";
+        dmenu = "${pkgs.rofi}/bin/rofi -dmenu -p \"dunst:\"";
+        browser = "${pkgs.chromium}/bin/chromium";
+        indicate_hidden = "yes";
+        show_indicators = "no";
+      };
+      shortcuts = {
+        close_all = "mod4+p";
+        context = "mod4+o";
       };
       urgency_low = {
         background = colors.bg;
@@ -61,7 +73,7 @@ in {
       rofi.combi-modi: run,drun
       rofi.show-icons: true
       rofi.icon-theme: Arc
-      rofi.theme: .cache/wal/colors-rofi-dark.rasi
+      rofi.theme: /home/tobia/.cache/wal/colors-rofi-dark.rasi
     '';
   };
 
@@ -115,7 +127,7 @@ in {
       };
       modifier = "Mod4";
       keybindings = {
-        "${modifier}+Return" = "exec emacs";
+        "${modifier}+Return" = "exec termite";
         "${modifier}+Shift+q" = "kill";
         "${modifier}+m" = "exec ${pkgs.rofi}/bin/rofi -show drun -display-drun \":\"";
         "${modifier}+Shift+m" = "exec ${pkgs.rofi}/bin/rofi -display-run \":\" -show run";
@@ -165,17 +177,15 @@ in {
 
         "${modifier}+r" = "mode resize";
 
-        "XF86MonBrightnessUp" = "exec xbacklight -inc 5";
-        "XF86MonBrightnessDown" = "exec xbacklight -dec 5";
-
+        "XF86MonBrightnessUp" = "exec ${pkgs.xorg.xbacklight}/bin/xbacklight -inc 5";
+        "XF86MonBrightnessDown" = "exec ${pkgs.xorg.xbacklight}/bin/xbacklight -dec 5";
         "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +1000";
         "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -1000";
         "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
-
-        "XF86AudioPlay" = "exec playerctl play-pause";
-        "XF86AudioPrev" = "exec playerctl previous";
-        "XF86AudioNext" = "exec playerctl next";
+        "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+        "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
+        "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
       };
     };
-  };  
+  };
 }
