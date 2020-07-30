@@ -11,7 +11,7 @@ pkgs: with pkgs; [
   shutter
 
   # Browser
-  brave
+  chromium
 
   # Audio
   pavucontrol

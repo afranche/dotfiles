@@ -16,5 +16,14 @@
 
       # Devtools
       jetbrains.pycharm-professional
+      docker-compose
+      postman
+      aws-iam-authenticator
+
+      # Kubernetes
+      kubectl
+      minikube
+      podman
+      cri-o
     ];
 }
